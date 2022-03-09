@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Sugar">
+    
+    <title>
+        
+            数据流的中位数 |
+        
+        Fang Tang Space
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"https://xpoet.cn/images/bg.svg","description":"黄色的森林分出两条路，我选择了人迹更少的那一条，从此决定我一生的道路。"},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Fang Tang Space
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                LINKS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/changelog"
+                            >
+                                CHANGELOG
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">LINKS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/changelog">CHANGELOG</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">数据流的中位数</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Sugar</span>
+                        
+                            <span class="author-label">Lv5</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2021-08-27 17:18:15</span>
+        <span class="mobile">2021-08-27 17:18</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/sf/">sf</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E6%96%B9%E7%B3%96%E7%AE%97%E6%B3%95/">方糖算法</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E5%AF%B9%E9%A1%B6%E5%A0%86/">对顶堆</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="题目直达：295-数据流的中位数"><a href="#题目直达：295-数据流的中位数" class="headerlink" title="题目直达：295. 数据流的中位数"></a>题目直达：<a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-median-from-data-stream/" >295. 数据流的中位数<i class="fas fa-external-link-alt"></i></a></h2><h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>中位数是有序列表中间的数。如果列表长度是偶数，中位数则是中间两个数的平均值。</p>
+<p>例如：</p>
+<p>[2,3,4] 的中位数是 3</p>
+<p>[2,3] 的中位数是 (2 + 3) &#x2F; 2 &#x3D; 2.5</p>
+<p>设计一个支持以下两种操作的数据结构：</p>
+<ul>
+<li><p>void addNum(int num) - 从数据流中添加一个整数到数据结构中。</p>
+</li>
+<li><p>double findMedian() - 返回目前所有元素的中位数。</p>
+</li>
+</ul>
+<h2 id="示例："><a href="#示例：" class="headerlink" title="示例："></a><strong>示例：</strong></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">addNum(1)</span><br><span class="line">addNum(2)</span><br><span class="line">findMedian() -&gt; 1.5</span><br><span class="line">addNum(3) </span><br><span class="line">findMedian() -&gt; 2</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h1><p>题目的意思就是，每次插入数组，然后随时取出中位数。有人说我不可以每次插入后sort一下吗？但是这样肯定超时，有人还说每次插入我用二分使他有序，也会超时。</p>
+<p>所以我们用到了<code>对顶堆</code>，由（大顶堆+小顶堆）构成，通常用来<code>动态维护第k大的值</code>（比如中位数）。</p>
+<p><img src="https://i.loli.net/2021/08/27/CLIwb4HE2NFytZo.png" alt="Snipaste_2021-08-27_17-53-06"></p>
+<ul>
+<li><p>我们以<code>小根堆堆顶</code>为标准，如果插入的数大于它则加入小根堆，否则加入大根堆。</p>
+</li>
+<li><p>当两边元素个数相差超过1，则将多的一边元素弹出，加入少的一边</p>
+</li>
+<li><p>求中位数，两个堆中个数多的那一个的堆顶，若相同则取两个堆顶求平均值</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">priority_queue&lt;<span class="type">int</span>&gt; big; <span class="comment">//大根堆</span></span><br><span class="line">priority_queue&lt;<span class="type">int</span>, vector&lt;<span class="type">int</span>&gt;, greater&lt;<span class="type">int</span>&gt; &gt; small; <span class="comment">//小根堆 </span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">insert</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(small.<span class="built_in">empty</span>() || x &gt; small.<span class="built_in">top</span>()) small.<span class="built_in">push</span>(x);</span><br><span class="line">    <span class="keyword">else</span> big.<span class="built_in">push</span>(x);</span><br><span class="line">    <span class="keyword">if</span>(big.<span class="built_in">size</span>() &gt; small.<span class="built_in">size</span>() + <span class="number">1</span>) &#123; small.<span class="built_in">push</span>(big.<span class="built_in">top</span>()); big.<span class="built_in">pop</span>(); &#125;</span><br><span class="line">	<span class="keyword">if</span>(small.<span class="built_in">size</span>() &gt; big.<span class="built_in">size</span>() + <span class="number">1</span>) &#123; big.<span class="built_in">push</span>(small.<span class="built_in">top</span>()); small.<span class="built_in">pop</span>(); &#125;	</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MedianFinder</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    priority_queue&lt;<span class="type">int</span>&gt; big;</span><br><span class="line">    priority_queue&lt;<span class="type">int</span>,vector&lt;<span class="type">int</span>&gt;,greater&lt;<span class="type">int</span>&gt;&gt; small;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">MedianFinder</span>() &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">addNum</span><span class="params">(<span class="type">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(small.<span class="built_in">empty</span>() || num &gt; small.<span class="built_in">top</span>()) small.<span class="built_in">push</span>(num);</span><br><span class="line">        <span class="keyword">else</span> big.<span class="built_in">push</span>(num);</span><br><span class="line">        <span class="keyword">if</span>(big.<span class="built_in">size</span>() &gt; small.<span class="built_in">size</span>() + <span class="number">1</span>) &#123; small.<span class="built_in">push</span>(big.<span class="built_in">top</span>()); big.<span class="built_in">pop</span>(); &#125;</span><br><span class="line">	    <span class="keyword">if</span>(small.<span class="built_in">size</span>() &gt; big.<span class="built_in">size</span>() + <span class="number">1</span>) &#123; big.<span class="built_in">push</span>(small.<span class="built_in">top</span>()); small.<span class="built_in">pop</span>(); &#125;	</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">double</span> <span class="title">findMedian</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(small.<span class="built_in">size</span>() &gt; big.<span class="built_in">size</span>()) <span class="keyword">return</span> small.<span class="built_in">top</span>();</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(small.<span class="built_in">size</span>() &lt; big.<span class="built_in">size</span>()) <span class="keyword">return</span> big.<span class="built_in">top</span>();</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">return</span> (small.<span class="built_in">top</span>() + big.<span class="built_in">top</span>())*<span class="number">0.5</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：数据流的中位数</li>
+        <li>Post author：Sugar</li>
+        <li>Create time：2021-08-27 17:18:15</li>
+        <li>
+            Post link：https://keep.xpoet.cn/2021/08/27/数据流的中位数/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E6%96%B9%E7%B3%96%E7%AE%97%E6%B3%95/">#方糖算法</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E5%AF%B9%E9%A1%B6%E5%A0%86/">#对顶堆</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/09/04/%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">合并区间</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/08/26/LeetCode%E5%9B%BE%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF2/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">LeetCode - 图的学习之路（二）</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Sugar</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+</div>
+
+
+
+</body>
+</html>

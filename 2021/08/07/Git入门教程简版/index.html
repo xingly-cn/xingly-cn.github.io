@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Sugar">
+    
+    <title>
+        
+            5h打通Git |
+        
+        Fang Tang Space
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"https://xpoet.cn/images/bg.svg","description":"黄色的森林分出两条路，我选择了人迹更少的那一条，从此决定我一生的道路。"},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Fang Tang Space
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                LINKS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/changelog"
+                            >
+                                CHANGELOG
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">LINKS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/changelog">CHANGELOG</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">5h打通Git</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Sugar</span>
+                        
+                            <span class="author-label">Lv5</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2021-08-07 12:31:08</span>
+        <span class="mobile">2021-08-07 12:31</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/other/">other</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/git/">git</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="Git常用命令"><a href="#Git常用命令" class="headerlink" title="Git常用命令"></a>Git常用命令</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">git config –global user.name 用户名</td>
+<td>设置用户签名</td>
+</tr>
+<tr>
+<td align="left">git config –global user.email 邮箱</td>
+<td>设置用户签名</td>
+</tr>
+<tr>
+<td align="left">git init</td>
+<td>初始化本地库</td>
+</tr>
+<tr>
+<td align="left">git status</td>
+<td>查看本地库状态</td>
+</tr>
+<tr>
+<td align="left">git add 文件名</td>
+<td>添加暂存区</td>
+</tr>
+<tr>
+<td align="left">git commit -m “日志信息” 文件名</td>
+<td>提交本地库</td>
+</tr>
+<tr>
+<td align="left">git reflog</td>
+<td>查看历史记录</td>
+</tr>
+<tr>
+<td align="left">git reset –hard 版本号</td>
+<td>版本穿梭</td>
+</tr>
+</tbody></table>
+<h3 id="初始化本地库"><a href="#初始化本地库" class="headerlink" title="初始化本地库"></a>初始化本地库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看本地库状态"><a href="#查看本地库状态" class="headerlink" title="查看本地库状态"></a>查看本地库状态</h3><p>1、首次查看（工作区没有任何文件）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">No commits yet</span><br><span class="line">nothing to commit (create/copy files and use <span class="string">&quot;git add&quot;</span> to track)</span><br></pre></td></tr></table></figure>
+
+<p>2、新增文件（hello.txt）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vim hello.txt</span><br><span class="line">hello asugar！</span><br></pre></td></tr></table></figure>
+
+<p>3、再次查看（检测到未追踪文件）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">No commits yet</span><br><span class="line">Untracked files:</span><br><span class="line">(use <span class="string">&quot;git add &lt;file&gt;...&quot;</span> to include <span class="keyword">in</span> what will be committed)</span><br><span class="line">	hello.txt</span><br></pre></td></tr></table></figure>
+
+<h3 id="添加暂存区"><a href="#添加暂存区" class="headerlink" title="添加暂存区"></a>添加暂存区</h3><p>1、添加暂存区</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git add hello.txt</span><br></pre></td></tr></table></figure>
+
+<p> 2、查看状态（检测到暂存区有新文件）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">No commits yet</span><br><span class="line">Changes to be committed:</span><br><span class="line">(use <span class="string">&quot;git rm --cached &lt;file&gt;...&quot;</span> to unstage)</span><br><span class="line">	new file:   hello.txt</span><br></pre></td></tr></table></figure>
+
+<h3 id="提交本地库"><a href="#提交本地库" class="headerlink" title="提交本地库"></a>提交本地库</h3><p>1、提交本地库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m <span class="string">&quot;First&quot;</span> hello.txt</span><br><span class="line">[master (root-commit) 0c25030] First</span><br><span class="line">1 file changed, 1 insertion(+)</span><br><span class="line">create mode 100644 hello.txt</span><br></pre></td></tr></table></figure>
+
+<p>2、查看状态（没有文件需要提交），刚才已经提交到本地库了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working tree clean</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改文件"><a href="#修改文件" class="headerlink" title="修改文件"></a>修改文件</h3><p>1、修改文件（hello.txt）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vim hello.txt</span><br><span class="line">hello asugar 2</span><br></pre></td></tr></table></figure>
+
+<p>2、查看状态（工作区有文件被修改）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Changes not staged <span class="keyword">for</span> commit:</span><br><span class="line">(use <span class="string">&quot;git add &lt;file&gt;...&quot;</span> to update what will be committed)</span><br><span class="line">(use <span class="string">&quot;git restore &lt;file&gt;...&quot;</span> to discard changes <span class="keyword">in</span> working directory)</span><br><span class="line">	modified:   hello.txt</span><br></pre></td></tr></table></figure>
+
+<p>3、将修改的文件再次添加暂存区</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add hello.txt</span><br><span class="line">warning: LF will be replaced by CRLF <span class="keyword">in</span> hello.txt.</span><br><span class="line">The file will have its original line endings <span class="keyword">in</span> your working directory</span><br></pre></td></tr></table></figure>
+
+<p>4、 查看状态（工作区的修改添加到了暂存区）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Changes to be committed:</span><br><span class="line">(use <span class="string">&quot;git restore --staged &lt;file&gt;...&quot;</span> to unstage)</span><br><span class="line">	modified:   hello.txt</span><br></pre></td></tr></table></figure>
+
+<p>5、再次提交到本地库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m <span class="string">&quot;Second&quot;</span> hello.txt</span><br><span class="line">warning: LF will be replaced by CRLF <span class="keyword">in</span> hello.txt.</span><br><span class="line">The file will have its original line endings <span class="keyword">in</span> your working directory</span><br><span class="line">[master aad0033] Second</span><br><span class="line">1 file changed, 1 insertion(+), 1 deletion(-)</span><br></pre></td></tr></table></figure>
+
+<h3 id="历史版本"><a href="#历史版本" class="headerlink" title="历史版本"></a>历史版本</h3><p>1、查看版本信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看版本信息</span></span><br><span class="line">$ git reflog</span><br><span class="line">aad0033 (HEAD -&gt; master) HEAD@&#123;0&#125;: commit: Second</span><br><span class="line">0c25030 HEAD@&#123;1&#125;: commit (initial): First</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看详细版本信息</span></span><br><span class="line">$ git <span class="built_in">log</span></span><br><span class="line">commit aad003348d81400cfd992f948c3b0eacbe9a8f70 (HEAD -&gt; master)</span><br><span class="line">Author: asugar &lt;xingly@88.com&gt;</span><br><span class="line">Date:   Sat Aug 7 13:29:37 2021 +0800</span><br><span class="line">    Second</span><br><span class="line"></span><br><span class="line">commit 0c250302315518e52b59bb66a2697ce385ecd33a</span><br><span class="line">Author: asugar &lt;xingly@88.com&gt;</span><br><span class="line">Date:   Sat Aug 7 13:23:11 2021 +0800</span><br><span class="line">    First</span><br></pre></td></tr></table></figure>
+
+<p>2、版本穿梭</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 找到版本号</span></span><br><span class="line">$ git reflog</span><br><span class="line">aad0033 (HEAD -&gt; master) HEAD@&#123;0&#125;: commit: Second</span><br><span class="line">0c25030 HEAD@&#123;1&#125;: commit (initial): First</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换第一次提交的版本</span></span><br><span class="line">$ git reset --hard 0c25030</span><br><span class="line">HEAD is now at 0c25030 First</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看版本信息 - 成功切换了</span></span><br><span class="line">$ git reflog</span><br><span class="line">0c25030 (HEAD -&gt; master) HEAD@&#123;0&#125;: reset: moving to 0c25030</span><br><span class="line">aad0033 HEAD@&#123;1&#125;: commit: Second</span><br><span class="line">0c25030 (HEAD -&gt; master) HEAD@&#123;2&#125;: commit (initial): First</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看hello.txt文件</span></span><br><span class="line">$ <span class="built_in">cat</span> hello.txt</span><br><span class="line">hello asugar</span><br></pre></td></tr></table></figure>
+
+<h2 id="Git分支操作"><a href="#Git分支操作" class="headerlink" title="Git分支操作"></a>Git分支操作</h2><table>
+<thead>
+<tr>
+<th>命令名称</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>git branch</td>
+<td>创建分支</td>
+</tr>
+<tr>
+<td>git branch -v</td>
+<td>查看分支</td>
+</tr>
+<tr>
+<td>git checkout 分支名</td>
+<td>切换分支</td>
+</tr>
+<tr>
+<td>git merge 分支名</td>
+<td>指定分支合并到当前分支</td>
+</tr>
+</tbody></table>
+<h3 id="查看分支"><a href="#查看分支" class="headerlink" title="查看分支"></a>查看分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -v</span><br><span class="line">* master 0c25030 First</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建分支</span></span><br><span class="line">$ git branch hot-fix</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看分支</span></span><br><span class="line">$ git branch -v</span><br><span class="line">  hot-fix 0c25030 First</span><br><span class="line">* master  0c25030 First</span><br></pre></td></tr></table></figure>
+
+<h3 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h3><p>1、切换到hot-fix分支，并修改hello.txt文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切换到hot-fix分支</span></span><br><span class="line">$ git checkout hot-fix</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改hello.txt</span></span><br><span class="line">$ vim hello.txt</span><br><span class="line">hello asugar hot-fix</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交暂存区和本地库</span></span><br><span class="line">$ git add hello.txt</span><br><span class="line">$ git commit -m <span class="string">&quot;hot-fix&quot;</span> hello.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换回master分支,hello.txt没有被改变</span></span><br><span class="line">$ git checkout master</span><br><span class="line">$ <span class="built_in">cat</span> hello.txt</span><br><span class="line">hello asugar</span><br></pre></td></tr></table></figure>
+
+<h3 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将hot-fix分支合并到master</span></span><br><span class="line">$ git merge hot-fix</span><br><span class="line"></span><br><span class="line"><span class="comment"># hello.txt被改变</span></span><br><span class="line">$ <span class="built_in">cat</span> hello.txt</span><br><span class="line">hello asugar hot-fix</span><br></pre></td></tr></table></figure>
+
+<h3 id="产生冲突"><a href="#产生冲突" class="headerlink" title="产生冲突"></a>产生冲突</h3><p>​    两个分支在&#x3D;&#x3D;同一个文件的同一个位置&#x3D;&#x3D;有两套不同的修改，Git无法决定使用哪一个，必须&#x3D;&#x3D;人为决定&#x3D;&#x3D;。</p>
+<p>1、模拟产生冲突</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改hello.txt（master分支）</span></span><br><span class="line">$ vim hello.txt</span><br><span class="line">hello asugar</span><br><span class="line">master <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交暂存区和本地库（master分支）</span></span><br><span class="line">$ git add hello.txt</span><br><span class="line">$ git commit -m <span class="string">&quot;master test&quot;</span> hello.txt</span><br><span class="line"></span><br><span class="line"><span class="comment">### 切换到hot-fix分支 ### </span></span><br><span class="line">git checkout hot-fix</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改hello.txt（hot-fix分支）</span></span><br><span class="line">$ vim hello.txt</span><br><span class="line">hello asugar</span><br><span class="line">hot-fix <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交暂存区和本地库（hot-fix分支）</span></span><br><span class="line">$ git add hello.txt</span><br><span class="line">$ git commit -m <span class="string">&quot;hot-fix test&quot;</span> hello.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 此时两个分支都对hello.txt进行了修改</span></span><br></pre></td></tr></table></figure>
+
+<p>2、进行合并</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># hot-fix合并到master分支</span></span><br><span class="line">$ git merge hot-fix</span><br><span class="line">Auto-merging hello.txt</span><br><span class="line">CONFLICT (content): Merge conflict <span class="keyword">in</span> hello.txt</span><br><span class="line">Automatic merge failed; fix conflicts and <span class="keyword">then</span> commit the result.</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提示合并失败</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h3><p>1、编辑冲突的文件，删除特殊符号，决定要使用的内容</p>
+<p>2、提交本地库&#x3D;&#x3D;不需要加上文件名&#x3D;&#x3D;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 编辑冲突文件</span></span><br><span class="line">$ vim hello.txt</span><br><span class="line">hello asugar	<span class="comment"># 相同内容</span></span><br><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; <span class="string">HEAD</span></span><br><span class="line"><span class="string">master test		# master分支内容</span></span><br><span class="line"><span class="string">=======</span></span><br><span class="line"><span class="string">hot-fix test	# hot-fix分支内容</span></span><br><span class="line"><span class="string">&gt;&gt;&gt;&gt;&gt;&gt;&gt; hot-fix</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 想保存啥，留下啥</span></span><br><span class="line"><span class="string">hello asugar</span></span><br><span class="line"><span class="string">master test</span></span><br><span class="line"><span class="string">hot-fix test</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 添加暂存区</span></span><br><span class="line"><span class="string">$ git add hello.txt</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 提交本地库</span></span><br><span class="line"><span class="string">$ git commit -m &quot;merge master/hot-fix&quot;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 查看hello.txt</span></span><br><span class="line"><span class="string">$ cat hello.txt</span></span><br><span class="line"><span class="string">hello asugar</span></span><br><span class="line"><span class="string">master test</span></span><br><span class="line"><span class="string">hot-fix test</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="GitHub-操作"><a href="#GitHub-操作" class="headerlink" title="GitHub 操作"></a>GitHub 操作</h2><table>
+<thead>
+<tr>
+<th>命令名称</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>git remote -v</td>
+<td>查看当前所有远程地址别名</td>
+</tr>
+<tr>
+<td>git remote add</td>
+<td>添加别名</td>
+</tr>
+<tr>
+<td>git push 别名 分支</td>
+<td>本地推送远程仓库</td>
+</tr>
+<tr>
+<td>git clone 远程地址</td>
+<td>远程仓库克隆本地</td>
+</tr>
+<tr>
+<td>git pull 远程库地址别名 远程分支名</td>
+<td>远程仓库的最新分支拉取与本地分支合并</td>
+</tr>
+</tbody></table>
+<h3 id="SSH免密登录"><a href="#SSH免密登录" class="headerlink" title="SSH免密登录"></a>SSH免密登录</h3><p>1、生成公钥私钥</p>
+<p>2、家目录下，复制 id_rsa.pub 文件内容，登录 GitHub，点击头像→Settings→SSH</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C xiaoheikeji@vip.qq.com</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：5h打通Git</li>
+        <li>Post author：Sugar</li>
+        <li>Create time：2021-08-07 12:31:08</li>
+        <li>
+            Post link：https://keep.xpoet.cn/2021/08/07/Git入门教程简版/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/git/">#git</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/08/09/%E5%AD%90%E4%B8%B2%E7%9A%84%E6%9C%80%E5%A4%A7%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">子串的最大出现次数</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/08/02/%E6%9C%89%E5%93%AA%E4%BA%9B%E5%8C%BA%E5%88%AB%EF%BC%9F/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">http与https有哪些区别？</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Sugar</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+</div>
+
+
+
+</body>
+</html>
