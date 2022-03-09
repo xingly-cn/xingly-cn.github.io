@@ -1,38 +1,13 @@
 ---
-title: Hello World
+title: Hello World!
+categories: other 
+abbrlink: info 
+date: 2021-04-12 20:59:42 
+top_img: transparent
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
-## Quick Start
+## 本站初衷
 
-### Create a new post
+记录我的刷题日常，分享学习心得。
 
-``` bash
-$ hexo new "My New Post"
-```
-
-More info: [Writing](https://hexo.io/docs/writing.html)
-
-### Run server
-
-``` bash
-$ hexo server
-```
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+本网站目前可以手把手带你解决 150 道 LeetCode 算法问题，而且在不断更新，全部基于 LeetCode 的题目，涵盖了所有题型和技巧。
